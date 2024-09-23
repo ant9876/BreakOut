@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 
 class Player(pygame.Rect):
     def __init__(self, x, y):
-        super().__init__(x, y, 100, 15)  # arbitrary values TODO yes
+        super().__init__(x, y, 100, 15)  # arbitrary values
         self.vx = 0
 
     def draw(self):
@@ -36,8 +36,8 @@ class Ball(pygame.Rect):
         self.vy = random.randint(3, 4)
 
     def draw(self):
-        pygame.draw.ellipse(screen, Color(102, 153, 204), self, 0)
-        pygame.draw.ellipse(screen, Color(77, 109, 142), self, 1)
+        pygame.draw.rect(screen, Color(102, 153, 204), self, 0)
+        pygame.draw.rect(screen, Color(77, 109, 142), self, 1)
 
     def update(self):
         self.x += self.vx
